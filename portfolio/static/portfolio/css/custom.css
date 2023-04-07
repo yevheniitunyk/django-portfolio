@@ -37,9 +37,13 @@ a:hover{
 .card-cont {
     display: flex !important;
     flex-direction: row;
-    align-items: center;
+    align-items: center !important;
     justify-content: space-evenly;
-    margin-bottom: 30px;
+    /* padding-bottom: 30px; */
+}
+
+.card-marg {
+  margin-bottom: 50px;
 }
 
 .description-text {
@@ -142,11 +146,33 @@ a:hover{
   max-width: 100%;
 }
 
-@media (max-width:896px) {
+.card {
+  width: 60%;
+}
+
+@media (max-width:1300px) {
   .card-cont{
     flex-direction: column;
+    align-items: center !important;
   }
+  .card-marg {
+  display: flex;
+  justify-content: space-evenly;
 }
+}
+
+@media (min-width: 1300px){
+  .card {
+    width: 0;
+    width: 26rem;
+  }
+  .card-marg {
+  display: flex;
+  justify-content: space-around;
+}
+}
+
+
 /* 
 .card {
     display: inline-block;
