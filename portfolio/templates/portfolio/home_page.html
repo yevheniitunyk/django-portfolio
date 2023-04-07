@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block content %}
+<div class="cow">
+<img src="{% static 'portfolio/profile_photo.png' %}" alt="">
+</div>
+<div class="desc mb-5">
+    <h2 class="t">Description</h2>
+    <p class="description-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere molestias dolorum vitae ut veniam iusto sapiente error, placeat vel et temporibus tenetur veritatis provident ad dolores doloremque doloribus a exercitationem! Iusto praesentium quaerat tempora ab ea iure modi rerum quam veritatis natus cumque itaque fugiat harum autem at mollitia, in sequi nemo aliquam magnam, dignissimos voluptatibus laboriosam? Nulla a necessitatibus fugiat exercitationem voluptas blanditiis assumenda. Fuga atque non omnis aspernatur! Dignissimos dolorum sed sapiente, illo ad repellat temporibus, asperiores accusamus quo quisquam rem, distinctio aut quas quos reiciendis necessitatibus voluptates velit quae deleniti soluta? Corrupti illo sunt repudiandae culpa architecto ab sequi? Cumque sit aliquid beatae quaerat vitae labore architecto nulla, quam nihil odio veritatis ea, commodi provident facilis, pariatur et minima tenetur minus repudiandae iste? Commodi officia magni perferendis deleniti quod, veniam beatae qui dignissimos placeat excepturi sapiente nihil nemo enim vitae suscipit omnis, id recusandae earum quibusdam. Pariatur recusandae beatae autem sit corrupti maxime nam quod, quasi esse non, repellendus quidem magni commodi fugiat. Debitis illum aliquam illo, ab aliquid omnis placeat repellat laudantium deserunt veritatis consequatur cum ipsam enim dolorem rem, nesciunt dolores! Deserunt facilis cum libero iusto dolorem id aliquid sapiente eos porro magni ea blanditiis inventore laboriosam magnam repudiandae, perspiciatis, eveniet alias, rem odit obcaecati in! Repellat aut, reprehenderit cupiditate dolorum harum quos quo hic dignissimos odio exercitationem fuga? Quam velit reprehenderit porro minima exercitationem quod dolore deserunt error, laboriosam tenetur fuga, sint dolor, accusamus id similique cumque delectus voluptas veritatis soluta ducimus amet ipsa. Nisi tenetur aspernatur quae repudiandae. Perferendis molestias libero reiciendis voluptates doloremque aliquam blanditiis quod modi iusto atque officiis, quae corrupti consectetur, quam a alias quas cumque eius voluptatibus illum. Placeat, corporis quis quod totam quos voluptatibus neque sint id, soluta officia beatae quidem rerum natus quisquam. Exercitationem, maiores provident? Officiis!</p>
+</div>
+<div class="card-cont">
+{% for post in item %}
+<div class="card" style="width: 27rem;">
+    {% if post.photo %}
+  <img src="{{post.photo.url}}" class="card-img-top" alt="...">
+  {% endif %}
+  <div class="card-body">
+    <h5 class="card-title"> <span class="tit">{{ post.title|safe }}</span></h5>
+    <p class="card-text"> {{ post.description|truncatewords:30 }} </p>
+  </div>
+  <div class="card-body">
+    <a href="#" class="card-link">Card link</a>
+    <a href="#" class="card-link">Another link</a>
+  </div>
+</div>
+{% endfor %}
+</div>
+{% endblock content %}
